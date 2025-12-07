@@ -1,22 +1,21 @@
-import { StyleSheet, Text, View, SafeAreaView, Alert } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
+import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.titleText}>Mia Hello RN world!</Text>
-      <Text style={styles.bodyText} numberOfLines={3}>
-        Replace the deprecated SafeAreaView:
-        <Text
-          style={styles.linkStyle}
-          onPress={() => Alert.alert("Text pressed")}
-        >
-          Press here
-        </Text>
-        Replace instances of the SafeAreaView from react-native with the one
-        from react-native-safe-area-context. You can typically use it in the
-        same way, wrapping your content within it.
-      </Text>
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <Image
+          source={require("./assets/splash-icon.png")}
+          style={styles.image1}
+        />
+        <Image
+          source={{ uri: "https://picsum.photos/200/300" }}
+          style={styles.image2}
+          blurRadius={2}
+        />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
@@ -24,19 +23,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
-    alignItems: "center",
-    justifyContent: "center",
   },
-  titleText: {
-    textAlign: "center",
-    color: "blue",
-    fontSize: 50,
-    fontWeight: "bold",
+  image1: {
+    width: 200,
+    height: 200,
   },
-  bodyText: {
-    fontSize: 20,
-    fontWeight: "ultralight",
-    textAlign: "justify",
+  image2: {
+    width: 200,
+    height: 200,
+    borderRadius: 100,
   },
-  linkStyle: { color: "red", textDecorationLine: "underline" },
 });
