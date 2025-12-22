@@ -9,6 +9,9 @@ export default function App() {
         <ActivityIndicator />
         <View style={styles.view1}>
           <Text style={styles.text1}>Hello</Text>
+          <View style={styles.childView}>
+
+          </View>
         </View>
       </SafeAreaView>
     </SafeAreaProvider>
@@ -25,10 +28,17 @@ const styles = StyleSheet.create({
     height: 200,
     width: 200,
     backgroundColor: "red",
-    justifyContent: "center",
     alignItems: "center",
+    marginTop: 10,
+    marginLeft: 10,
+    paddingTop: 40,
   },
   text1: {
     fontSize: 50,
   },
+  childView: {
+    height:50,
+    width:50,
+    backgroundColor:"green"
+  }
 });
