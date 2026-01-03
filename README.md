@@ -1,2 +1,2 @@
-# react_native_first_start
+# bookstore-mobile-app-react-native
 React Native learning
